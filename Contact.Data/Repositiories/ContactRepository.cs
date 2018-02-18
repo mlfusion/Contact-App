@@ -19,7 +19,7 @@ namespace Contact.Data.Repositiories
             {
                 EntityFramework.Contact obj = new EntityFramework.Contact();
                 obj.FirstName = _contact.FirstName;
-                obj.LastName = _contact.FirstName;
+                obj.LastName = _contact.LastName;
                 obj.Email = _contact.Email;
                 obj.Phone = _contact.Phone;
                 obj.Birthdate = _contact.Birthdate;
