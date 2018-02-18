@@ -1,0 +1,67 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.body-content {
+    padding-top: 20px
+}
+
+/*.progress_modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 255, 255, 255, .8 ) url('../../../Images/ajax-loader.gif') 50% 50% no-repeat;
+    background-size: 400px;
+    display: block;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+/*.progress_modal {
+    padding: 50px;
+    position: relative;
+    text-align: center;
+}*/
+
+    .progress_modal:before {
+        content: "";
+        height: 30px;
+        width: 30px;
+        margin: -15px auto auto -15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-width: 8px;
+        border-style: solid;
+        border-color: #2180c0 #ccc #ccc;
+        border-radius: 100%;
+        animation: rotation .7s infinite linear;
+    }
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}

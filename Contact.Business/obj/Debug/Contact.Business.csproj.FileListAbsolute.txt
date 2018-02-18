@@ -1,0 +1,15 @@
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contact.Business.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contact.Business.pdb
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contact.Data.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contacts.Model.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\EntityFramework.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contact.Data.pdb
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contact.Data.dll.config
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\Contacts.Model.pdb
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\EntityFramework.xml
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\obj\Debug\Contact.Business.csprojResolveAssemblyReference.cache
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\obj\Debug\Contact.Business.csproj.CoreCompileInputs.cache
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\obj\Debug\Contact.Business.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\obj\Debug\Contact.Business.pdb
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\AutoMapper.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Business\bin\Debug\AutoMapper.xml

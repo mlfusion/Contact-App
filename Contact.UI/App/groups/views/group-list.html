@@ -1,0 +1,98 @@
+﻿
+
+
+<div class="card">
+
+    <div class="card-header h3">
+        <div class="row">
+            <div class="col-md-4">
+                Group List
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-5">
+
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <form name="groupForm" ng-submit="addGroup()">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" ng-model="name" id="group" placeholder="Add group name...." required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary" title="add new group">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action flex-column align-items-start" ng-repeat="g in groups">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ g.GroupName }}</h5>
+                        </div>
+ 
+                            <div class="btn-group btn-group-sm pull-right" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary d-sm-none d-md-block d-none d-sm-block" ng-click="getGroup(g.Id)" title="view group contacts"><i class="fa fa-list"></i></button>
+                                <button type="button" class="btn btn-info d-block d-sm-none" ng-click="getGroupInModal(g.Id)" title="view group contacts on modal"><i class="fa fa-list-ol"></i></button>
+                                <button type="button" class="btn btn-primary" ng-click="openEditModal(g)" title="edit group"><i class="fa fa-pencil"></i></button>
+                                <button type="button" class="btn btn-danger" ng-click="deleteGroup(g.Id)" title="delete group"><i class="fa fa-trash"></i></button>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="listpadding"></div>
+
+            <!-- disply on screen >= 770px -->
+            <div class="col-md-7">  
+                <div group-contact-list group-id="groupId" groups="groups" contacts="contacts" get-groups="getGroups()"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div group-edit group="group"></div>
+
+<!-- display on screen <- 768px -->
+<div group-contact-modal contacts="contacts"></div>
+
+<style>
+    @media only screen and (max-width: 768px) {
+        .sam, #myInput {
+            display: none !important
+        }
+
+        #myInput {
+            padding-left: 20px
+        }
+
+        .listpadding {
+            padding: 10px
+        }
+    }
+
+    #myInput {
+        /* background-image: url('/css/searchicon.png');
+       background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;*/
+        padding: 12px 20px 12px 12px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+</style>
+

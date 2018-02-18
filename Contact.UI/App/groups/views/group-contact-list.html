@@ -1,0 +1,11 @@
+﻿
+<ul class="list-group d-sm-none d-md-block d-none d-sm-block">
+    <li class="list-group-item text-center"><h4>List of Contacts</h4></li>
+    <li class="list-group-item" ng-repeat="c in contacts">
+        {{c.FirstName}} {{c.LastName}} 
+            <div class="btn-group btn-group-sm pull-right" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary d-sm-none d-md-block d-none d-sm-block" ng-click="goToContact(c.Id)" title="view group"><i class="fa fa-list"></i></button>
+                <button type="button" class="btn btn-danger" ng-click="deleteGroupContact(c.Id)" title="delete group contact"><i class="fa fa-trash"></i></button>
+            </div>
+    </li>
+</ul>

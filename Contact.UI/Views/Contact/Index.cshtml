@@ -1,0 +1,30 @@
+﻿
+
+@{
+    ViewBag.Title = "Contacts";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <!-- Parents List Directive -->
+                <div data-ng-view></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- angular scripts -->
+<script src="~/App/route.js"></script>
+<script src="~/App/contact/controllers/contactController.js"></script>
+<script src="~/App/groups/controllers/groupController.js"></script>
+<script src="~/App/contact/controllers/editContactController.js"></script>
+<script src="~/App/groups/controllers/groupContactsController.js"></script>
+<script src="~/App/services/contactService.js"></script>
+<script src="~/App/services/groupService.js"></script>
+<script src="~/Scripts/contact/contact.js"></script>
+

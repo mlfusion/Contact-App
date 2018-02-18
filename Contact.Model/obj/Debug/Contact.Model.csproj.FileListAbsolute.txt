@@ -1,0 +1,5 @@
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Model\bin\Debug\Contacts.Model.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Model\bin\Debug\Contacts.Model.pdb
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Model\obj\Debug\Contact.Model.csproj.CoreCompileInputs.cache
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Model\obj\Debug\Contacts.Model.dll
+C:\Users\eguaynk\Documents\Visual Studio 2017\Projects\Invonto.Solution\Contact.Model\obj\Debug\Contacts.Model.pdb

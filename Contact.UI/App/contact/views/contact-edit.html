@@ -1,0 +1,116 @@
+﻿
+
+<!--{{ contact | json }}-->
+
+<div class="card">
+    <div class="card-header h3">
+        {{ title }}
+    </div>
+    <div class="card-body">
+
+        <form role="form" id="contactForm" name="contactForm" ng-submit="editContact()" >
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>Profile Photo</label>
+                    <div class="card text-center">
+                        <div class="avatar img-thumbnail">
+                            <img class="img-fluid circle" alt="profile photo" src="../../../Images/Profile/{{ contact.Photo }}" height="250">
+                        </div>
+                        <div class="card-body">
+                            <div class="custom-file">
+                                <input type="file" id="file" file-model="myFile" class="custom-file-input">
+                                <label class="custom-file-label" for="file">Choose File</label>
+                                <span class="h6">max size is 3mb</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" class="form-control border-input" placeholder="First Name (required)" ng-model="contact.FirstName" 
+                                       id="firstname" name="firstname" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control border-input" placeholder="Last Name (required)" ng-model="contact.LastName" 
+                                       id="lastname" name="lastname" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control border-input" placeholder="Email (required)" ng-model="contact.Email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" class="form-control border-input" data-mask="phone_us" name="phone"  placeholder="Phone" ng-model="contact.Phone">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Birthdate</label>
+                                <input type="text" id="datepicker" class="form-control border-input" placeholder="Birthdate" ng-model="contact.Birthdate">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="groups">Groups</label>
+                                <select multiple class="form-control" id="groups" ng-model="contactSelectItems" ng-options="item.Id as item.Name for item in list"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Comments</label>
+                                <textarea rows="5" class="form-control border-input" placeholder="Comments" ng-model="contact.Comments">
+                            </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group pull-right">
+                                <button type="submit" class="btn btn-primary btn-fill btn-wd">{{ type }}</button>
+                                <a href="javascript:void(0)" ng-click="gotoMain()" class="btn btn-dark btn-fill btn-wd">Back</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="../../../Scripts/contact/contact.js"></script>
+
+<style>
+    .avatar {
+        padding: 10px
+    }
+</style>

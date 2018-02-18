@@ -1,0 +1,97 @@
+﻿
+
+<div class="card">
+
+    <div class="card-header h3">
+        <div class="row">
+            <div class="col-md-4">
+                Contact List
+            </div>
+        </div>      
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-12 sam col-md-12 d-none d-sm-block d-sm-none d-md-block">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="button" ng-click="addNewContact()" class="btn btn-primary mb-2">Add new contact</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" onkeyup="myFunction()" ng-model="search" placeholder="Search for contacts..." title="Type in a name">
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="sam col-md-12 d-none d-sm-block d-sm-none d-md-block">
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <tr class="text-center">
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Groups</th>
+                            <th></th>
+                        </tr>
+
+
+                        <tr dir-paginate="c in contacts | filter : search | itemsPerPage:5">
+                            <td>{{ c.FirstName }}</td>
+                            <td>{{ c.LastName }}</td>
+                            <td>{{ c.Email }}</td>
+                            <td class="text-center"><span ng-class="{'badge badge-pill badge-primary' : c.Groups.length > 0, 'badge badge-pill badge-danger' : c.Groups == 0}">{{ c.Groups.length }}</span></td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a ng-href="#!/contact/edit/{{ c.Id }}" class="btn btn-primary btn-group-sm" title="edit contact"><i class="fa fa-pencil"></i></a>
+                                    <button type="button" class="btn btn-danger btn-group-sm" ng-click="deleteContact(c.Id)" title="delete contact"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                <!-- pagination directive -->
+                <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true"></dir-pagination-controls>
+                </div>
+
+            </div>
+       
+        </div>
+
+        <!-- child view page -->
+        <div contact-card contacts='contacts' add-contact="addNewContact"></div>
+
+    </div>
+
+</div>
+
+<style>
+    @media only screen and (max-width: 768px) {
+        .sam, #myInput {
+            display: none !important
+        }
+
+        #myInput {
+            padding-left: 20px
+        }
+    }
+
+    #myInput {
+       /* background-image: url('/css/searchicon.png');
+       background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;*/
+        padding: 12px 20px 12px 12px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+</style>
+

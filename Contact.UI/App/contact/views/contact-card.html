@@ -1,0 +1,63 @@
+﻿
+<div class="d-md-none">
+    <!--<input type="text" id="myInput2" class="form-control" ng-model="search" placeholder="Search by name..." title="Search by name">-->
+
+    <div class="list-group">
+        <div class="list-group-item">
+            <form name="groupForm">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" id="myInput2" class="form-control" ng-model="search" placeholder="Search by name..." title="Search by name">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" ng-click="addNewContact()"class="btn btn-primary" title="add new contact">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card" ng-repeat="c in contacts | filter : search">
+        <div class="card-header">
+            {{ c.FirstName }} {{ c.LastName }}
+            <span class="pull-right">
+                <button type="button" class="btn btn-primary">
+                    Groups <span class="badge badge-light">{{ c.Groups.length }}</span>
+                </button>
+            </span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Email: {{c.Email}}</h5>
+            <p class="card-text">Comments: {{ c.Comments }}</p>
+            <a href="#!/contact/edit/{{c.Id}}" class="btn btn-primary">View more...</a>
+        </div>
+    </div>
+
+</div>
+
+
+<style>
+    .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+    }
+
+    #myInput2 {
+        background-image: url('/css/searchicon.png');
+        /*background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;*/
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        padding: 12px 20px 12px 12px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+</style>

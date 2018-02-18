@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ContactDBContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Birthdate" Type="DateTime" Precision="0" />
+    <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Groups" Relationship="ContactDBContext.ContactGroups" FromRole="Contact" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Contacts" Relationship="ContactDBContext.ContactGroups" FromRole="Group" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="Contact_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="ContactGroups" Association="ContactDBContext.ContactGroups">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <FunctionImport Name="sp_DeleteGroup" ReturnType="Collection(String)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertGroup" ReturnType="Collection(String)">
+      <Parameter Name="groupName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateGroup" ReturnType="Collection(String)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="groupName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SelectGroup" EntitySet="Groups" ReturnType="Collection(ContactDBContext.Group)" />
+    <FunctionImport Name="sp_SelectGroupById" EntitySet="Contacts" ReturnType="Collection(ContactDBContext.Contact)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteContactGroup" ReturnType="Collection(String)">
+      <Parameter Name="contactId" Mode="In" Type="Int32" />
+      <Parameter Name="groupid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <Association Name="ContactGroups">
+    <End Type="ContactDBContext.Contact" Role="Contact" Multiplicity="*" />
+    <End Type="ContactDBContext.Group" Role="Group" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="sp_SelectGroup_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="GroupName" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_SelectGroupById_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GroupName" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>
