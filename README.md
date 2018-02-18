@@ -7,7 +7,7 @@ Technology used for this project
 - MVC5
 - AngularJS
 - Bootstrap
-- AutpMapper
+- Automapper
 - Web API
 - Entity Framework
 - SQL Server
@@ -16,6 +16,7 @@ Project startup
   - Open solution to start project
   
 Datebase setup
-  - Open Datebase setup script file on SQL server and exec script. Tablea and store proc will be 
+  - Open Datebase setup script file on SQL server and exec script. Table and store proc will be 
   created 
-  - Modify web config connectionstring section in Contact.UI project  
+  - Modify web config file, in the connectionstring section in Contact.UI project. To confirm that connectionstring 
+    is same as database. 
