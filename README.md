@@ -16,7 +16,8 @@ Project startup
   - Open solution to start project
   
 Datebase setup
-  - Open Datebase setup script file on SQL server and exec script. Table and store proc will be 
-  created 
+  - Open Datebase setup script file on SQL server and exec script.
+  - Project is setup to use "." or "localhost" as default server name
+  - Table and store proc will be created 
   - Modify web config file, in the connectionstring section in Contact.UI project. To confirm that connectionstring 
     is same as database. 
